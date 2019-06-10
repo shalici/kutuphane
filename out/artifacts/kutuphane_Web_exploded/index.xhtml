@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>Sehoffice Library</title>
+</h:head>
+
+<body>
+
+<p:growl globalOnly="true" id="growl"/>
+<p:panel>
+    <h:form id="Kitap_Tanim">
+        <p:panelGrid id="kitap_tanim_grid" columns="3">
+
+            <p:outputLabel value="*Kitap Adi:"/>
+            <p:inputText id="kitap_adi_input" value="#{kitapView.kitap.adi}"
+                         required="true" requiredMessage="Bu alan zorunludur"/>
+            <p:message for="kitap_adi_input" display="text.warning"/>
+
+            <p:outputLabel value="*Yazar:"/>
+            <p:inputText id="yazar_input" value="#{kitapView.kitap.yazar}"
+                         required="true" requiredMessage="Bu Alan Zorunludur."/>
+            <p:message for="yazar_input" display="text,icon"/>
+
+            <p:outputLabel value="*Basım Yılı"/>
+            <p:inputText id="basimYili_input" value="#{kitapView.kitap.basimYili}"
+                         required="true" requiredMessage="Bu Alan Zorunludur."/>
+            <p:message for="basimYili_input" display="text,icon"/>
+
+            <p:outputLabel value="Yayın Evi"/>
+            <p:inputText id="yayinEvi_input" value="#{kitapView.kitap.yayinEvi}"/>
+            <p:message for="yayinEvi_input" display="text,icon"/>
+
+            <p:outputLabel value="*Sayfa Sayısı"/>
+            <p:message for="sayfaSayisi_input" display="text,icon"/>
+            <p:inputText id="sayfaSayisi_input" value="#{kitapView.kitap.sayfaSayisi}"
+                         maxlength="4"
+                         required="true" requiredMessage="Bu Alan Zorunludur."/>
+
+
+            <p:outputLabel value="*Tur:"/>
+            <p:selectOneMenu id="tur_input" value="#{kitapView.turList}">
+
+                <p:ajax event="itemSelect" listener="#{kitapView.onTurSelected}"
+                        update= "tur_input" />
+
+                <f:selectItem noSelectionOption="true"
+                              itemLabel="Seçiniz.."
+                              itemValue="#{null}"/>
+
+
+                <f:selectItems var="tur" value="#{kitapView.turList.entrySet()}"
+                               itemLabel="#{tur.value}" itemValue="#{tur.key}"/>
+
+            </p:selectOneMenu>
+        </p:panelGrid>
+
+        <p:commandButton value="Kaydet"
+                         update="kitap_tanim_grid growl :liste_form:kitap_listesi"
+                         actionListener="#{kitapView.onKaydet}"/>
+
+
+    </h:form>
+</p:panel>
+
+<p:panel>
+    <h:form id="liste_form">
+        <p:dataTable id="kitap_listesi" var="kit" value="#{kitapView.kitapList}">
+
+            <p:column headerText="Id">
+                <h:outputText value="#{kit.id}"/>
+            </p:column>
+
+            <p:column headerText="Adı">
+                <h:outputText value="#{kit.adi}"/>
+            </p:column>
+
+            <p:column headerText="Yazar">
+                <h:outputText value="#{kit.yazar}"/>
+            </p:column>
+
+            <p:column headerText="Basım Yılı">
+                <h:outputText value="#{kit.basimYili}"/>
+            </p:column>
+
+            <p:column headerText="Yayın Evi">
+                <h:outputText value="#{kit.yayinEvi}"/>
+            </p:column>
+
+            <p:column headerText="Sayfa Sayısı">
+                <h:outputText value="#{kit.sayfaSayisi}"/>
+            </p:column>
+
+
+
+        </p:dataTable>
+    </h:form>
+</p:panel>
+
+
+</body>
+</html>
