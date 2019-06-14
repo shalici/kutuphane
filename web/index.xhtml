@@ -11,10 +11,50 @@
 </h:head>
 
 <body>
+<h:form>
+    <p:growl id="messages"/>
 
+    <p:menubar>
+        <p:submenu label="Kategoriler" icon="pi pi-file">
+            <p:submenu label="Ders" icon="pi pi-briefcase">
+                <p:menuitem value="Fizik" url="localhost:8081/ders/fizik/#" />
+                <p:menuitem value="Kimya" url="localhost:8081/ders/kimya/#" />
+                <p:menuitem value="Biyoloji" url="http://localhost:8081/ders/Biyoloji/biyoloji.xhtml" />
+            </p:submenu>
+            <p:menuitem value="Bilim Kurgu" url="#" />
+            <p:separator />
+            <p:menuitem value="Fantastik" url="#" />
+            <p:menuitem value="Aksiyon" url="#"/>
+            <p:menuitem value="Dram" url="#"/>
+            <p:menuitem value="Aşk" url="#"/>
+            <p:menuitem value="Polisiye" url="#"/>
+            <p:menuitem value="Gerilim" url="#"/>
+
+        </p:submenu>
+
+        <p:submenu label="Edit" icon="pi pi-pencil">
+            <p:menuitem value="Undo" url="#" icon="pi pi-angle-double-left" />
+            <p:menuitem value="Redo" url="#" icon="pi pi-angle-double-right" />
+        </p:submenu>
+
+        <p:submenu label="Kullanıcı" icon="pi pi-cog"/>
+                <p:menuitem value="Oturumu Kapat" action="#{menuView.save}" icon="pi pi-save" update="Oturum Kapatılmıştır. Giriş Ekranına Yönlendiriliyorsunuz."/>
+                <p:menuitem value="Temizle" action="#{menuView.update}" icon="pi pi-refresh" update="Temizlendi"/>
+        </p:submenu>
+
+
+
+        <f:facet name="options">
+            <p:inputText style="margin:1px 10px 1px 1px;" placeholder="Search"/>
+            <p:commandButton type="button" value="Çıkış Yap" url="http://localhost:8081/index.xhtml" icon="pi pi-home" />
+        </f:facet>
+    </p:menubar>
+</h:form>
+<center>
 <p:growl globalOnly="true" id="growl"/>
 <p:panel>
     <h:form id="Kitap_Tanim">
+
         <p:panelGrid id="kitap_tanim_grid" columns="3">
 
             <p:outputLabel value="*Kitap Adi:"/>
@@ -53,12 +93,10 @@
                          update="kitap_tanim_grid growl :liste_form:kitap_listesi"
                          actionListener="#{kitapView.onKaydet}"/>
 
-
-
-
     </h:form>
-</p:panel>
 
+</p:panel>
+</center>
 <p:panel>
     <h:form id="liste_form">
         <p:dataTable id="kitap_listesi" var="kit" value="#{kitapView.kitapList}">
