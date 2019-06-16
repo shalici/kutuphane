@@ -5,7 +5,7 @@ import enums.Tur;
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlEnumValue;
 
-@Inheritance
+@Inheritance(strategy = InheritanceType.JOINED)
 @Entity
 @Table(name = "yazar")
 public class Yazar extends BaseEntity{

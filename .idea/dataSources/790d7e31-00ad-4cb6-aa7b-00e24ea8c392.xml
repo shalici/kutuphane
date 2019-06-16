@@ -9,7 +9,7 @@
       <Comment>default administrative connection database</Comment>
       <StateNumber>567</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>868</IntrospectionStateNumber>
+      <IntrospectionStateNumber>880</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </database>
@@ -101,7 +101,7 @@
       <ObjectId>32813</ObjectId>
       <StateNumber>653</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>869</IntrospectionStateNumber>
+      <IntrospectionStateNumber>881</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -170,109 +170,109 @@
       <SchemaId>11</SchemaId>
     </extension>
     <sequence id="27" parent="18" name="kategori_id_seq">
-      <ObjectId>33486</ObjectId>
-      <StateNumber>854</StateNumber>
+      <ObjectId>33517</ObjectId>
+      <StateNumber>877</StateNumber>
       <Owner>postgres</Owner>
       <SequenceIdentity>1</SequenceIdentity>
       <CacheSize>1</CacheSize>
       <DataType>bigint</DataType>
     </sequence>
     <sequence id="28" parent="18" name="kitap_id_seq">
-      <ObjectId>33496</ObjectId>
-      <StateNumber>855</StateNumber>
+      <ObjectId>33527</ObjectId>
+      <StateNumber>878</StateNumber>
       <Owner>postgres</Owner>
       <SequenceIdentity>1</SequenceIdentity>
       <CacheSize>1</CacheSize>
       <DataType>bigint</DataType>
     </sequence>
     <sequence id="29" parent="18" name="yazar_id_seq">
-      <ObjectId>33506</ObjectId>
-      <StateNumber>856</StateNumber>
+      <ObjectId>33537</ObjectId>
+      <StateNumber>879</StateNumber>
       <Owner>postgres</Owner>
       <SequenceIdentity>1</SequenceIdentity>
       <CacheSize>1</CacheSize>
       <DataType>bigint</DataType>
     </sequence>
     <table id="30" parent="18" name="kategori">
-      <ObjectId>33488</ObjectId>
+      <ObjectId>33519</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>854</StateNumber>
+      <StateNumber>877</StateNumber>
     </table>
     <table id="31" parent="18" name="kitap">
-      <ObjectId>33498</ObjectId>
+      <ObjectId>33529</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>855</StateNumber>
+      <StateNumber>878</StateNumber>
     </table>
     <table id="32" parent="18" name="yazar">
-      <ObjectId>33508</ObjectId>
+      <ObjectId>33539</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>856</StateNumber>
+      <StateNumber>879</StateNumber>
     </table>
     <column id="33" parent="30" name="id">
       <Position>1</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>854</StateNumber>
+      <StateNumber>877</StateNumber>
       <TypeId>20</TypeId>
     </column>
     <column id="34" parent="30" name="dtar">
       <Position>2</Position>
       <DataType>timestamp|0s</DataType>
-      <StateNumber>854</StateNumber>
+      <StateNumber>877</StateNumber>
       <TypeId>1114</TypeId>
     </column>
     <column id="35" parent="30" name="dkul">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>854</StateNumber>
+      <StateNumber>877</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="36" parent="30" name="etar">
       <Position>4</Position>
       <DataType>timestamp|0s</DataType>
-      <StateNumber>854</StateNumber>
+      <StateNumber>877</StateNumber>
       <TypeId>1114</TypeId>
     </column>
     <column id="37" parent="30" name="ekul">
       <Position>5</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>854</StateNumber>
+      <StateNumber>877</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="38" parent="30" name="basim_yili">
       <Position>6</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>854</StateNumber>
+      <StateNumber>877</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="39" parent="30" name="tur">
       <Position>7</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>854</StateNumber>
+      <StateNumber>877</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="40" parent="30" name="yayinevi">
       <Position>8</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>854</StateNumber>
+      <StateNumber>877</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="41" parent="30" name="yazar">
       <Position>9</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>854</StateNumber>
+      <StateNumber>877</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <index id="42" parent="30" name="kategori_pkey">
-      <ObjectId>33494</ObjectId>
-      <StateNumber>854</StateNumber>
+      <ObjectId>33525</ObjectId>
+      <StateNumber>877</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
     </index>
     <key id="43" parent="30" name="kategori_pkey">
-      <ObjectId>33495</ObjectId>
-      <StateNumber>854</StateNumber>
+      <ObjectId>33526</ObjectId>
+      <StateNumber>877</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>kategori_pkey</UnderlyingIndexName>
@@ -281,85 +281,85 @@
       <Position>1</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>855</StateNumber>
+      <StateNumber>878</StateNumber>
       <TypeId>20</TypeId>
     </column>
     <column id="45" parent="31" name="dtar">
       <Position>2</Position>
       <DataType>timestamp|0s</DataType>
-      <StateNumber>855</StateNumber>
+      <StateNumber>878</StateNumber>
       <TypeId>1114</TypeId>
     </column>
     <column id="46" parent="31" name="dkul">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>855</StateNumber>
+      <StateNumber>878</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="47" parent="31" name="etar">
       <Position>4</Position>
       <DataType>timestamp|0s</DataType>
-      <StateNumber>855</StateNumber>
+      <StateNumber>878</StateNumber>
       <TypeId>1114</TypeId>
     </column>
     <column id="48" parent="31" name="ekul">
       <Position>5</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>855</StateNumber>
+      <StateNumber>878</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="49" parent="31" name="adi">
       <Position>6</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>855</StateNumber>
+      <StateNumber>878</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="50" parent="31" name="basim_yili">
       <Position>7</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>855</StateNumber>
+      <StateNumber>878</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="51" parent="31" name="findbyall">
       <Position>8</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>855</StateNumber>
+      <StateNumber>878</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="52" parent="31" name="sayfa_sayisi">
       <Position>9</Position>
-      <DataType>varchar(255)|0s</DataType>
-      <StateNumber>855</StateNumber>
-      <TypeId>1043</TypeId>
+      <DataType>integer|0s</DataType>
+      <StateNumber>878</StateNumber>
+      <TypeId>23</TypeId>
     </column>
     <column id="53" parent="31" name="tur">
       <Position>10</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>855</StateNumber>
+      <StateNumber>878</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="54" parent="31" name="yayin_evi">
       <Position>11</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>855</StateNumber>
+      <StateNumber>878</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="55" parent="31" name="yazar">
       <Position>12</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>855</StateNumber>
+      <StateNumber>878</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <index id="56" parent="31" name="kitap_pkey">
-      <ObjectId>33504</ObjectId>
-      <StateNumber>855</StateNumber>
+      <ObjectId>33535</ObjectId>
+      <StateNumber>878</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
     </index>
     <key id="57" parent="31" name="kitap_pkey">
-      <ObjectId>33505</ObjectId>
-      <StateNumber>855</StateNumber>
+      <ObjectId>33536</ObjectId>
+      <StateNumber>878</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>kitap_pkey</UnderlyingIndexName>
@@ -368,67 +368,67 @@
       <Position>1</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>856</StateNumber>
+      <StateNumber>879</StateNumber>
       <TypeId>20</TypeId>
     </column>
     <column id="59" parent="32" name="dtar">
       <Position>2</Position>
       <DataType>timestamp|0s</DataType>
-      <StateNumber>856</StateNumber>
+      <StateNumber>879</StateNumber>
       <TypeId>1114</TypeId>
     </column>
     <column id="60" parent="32" name="dkul">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>856</StateNumber>
+      <StateNumber>879</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="61" parent="32" name="etar">
       <Position>4</Position>
       <DataType>timestamp|0s</DataType>
-      <StateNumber>856</StateNumber>
+      <StateNumber>879</StateNumber>
       <TypeId>1114</TypeId>
     </column>
     <column id="62" parent="32" name="ekul">
       <Position>5</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>856</StateNumber>
+      <StateNumber>879</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="63" parent="32" name="adi">
       <Position>6</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>856</StateNumber>
+      <StateNumber>879</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="64" parent="32" name="adi_soyadi">
       <Position>7</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>856</StateNumber>
+      <StateNumber>879</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="65" parent="32" name="soyadi">
       <Position>8</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>856</StateNumber>
+      <StateNumber>879</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="66" parent="32" name="tur">
       <Position>9</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>856</StateNumber>
+      <StateNumber>879</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <index id="67" parent="32" name="yazar_pkey">
-      <ObjectId>33514</ObjectId>
-      <StateNumber>856</StateNumber>
+      <ObjectId>33545</ObjectId>
+      <StateNumber>879</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
     </index>
     <key id="68" parent="32" name="yazar_pkey">
-      <ObjectId>33515</ObjectId>
-      <StateNumber>856</StateNumber>
+      <ObjectId>33546</ObjectId>
+      <StateNumber>879</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>yazar_pkey</UnderlyingIndexName>
