@@ -51,6 +51,7 @@ public class KitapService implements IKitapService {
         if (kitapList!=null){
             kitapDAO.findAll();
         }else {
+
             System.out.println("Liste boş");
         }
     }
@@ -62,3 +63,4 @@ public class KitapService implements IKitapService {
         return kitapDAO.findAll();
     }
 }
+

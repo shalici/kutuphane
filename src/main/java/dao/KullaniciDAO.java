@@ -46,4 +46,26 @@ public class KullaniciDAO extends BaseDAO {
         return kullaniciKayitList;
 
     }
+
+    public void giris(KullaniciKayit kullaniciKayit) {
+
+
+        Transaction transaction = null;
+        try {
+
+            transaction = getSession().beginTransaction();
+            getSession().save(kullaniciKayit);
+
+
+        } catch (HibernateException ex) {
+            ex.printStackTrace();
+            transaction.rollback();
+        } finally {
+            transaction.commit();
+
+        }
+
+    }
+
+
 }

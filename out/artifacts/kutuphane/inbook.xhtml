@@ -17,6 +17,7 @@
     <p:menubar>
         <p:submenu label="Yönetim" icon="pi pi-file">
             <p:menuitem value="Kullanıcı Oluştur" url="http://localhost:8081/register.xhtml"/>
+            <p:menuitem value="Kullanıcı Listesi" url="http://localhost:8081/kul_list.xhtml"/>
         </p:submenu>
         <p:submenu label="Kategoriler" icon="pi pi-file">
             <p:submenu label="Ders" icon="pi pi-briefcase">
@@ -82,7 +83,7 @@
 
            <p:outputLabel value="Sayfa Sayısı"/>
             <p:inputText id="sayfaSayisi_input" value="#{kitapView.kitap.sayfaSayisi}"
-            maxlength="4"  type="number"/>
+            maxlength="4"  type="number" default=""/>
             <p:message for="sayfaSayisi_input" display="text,icon"/>
 
             <p:outputLabel value="Tür"/>
@@ -96,9 +97,6 @@
         <p:commandButton value="Kaydet"
                          update="kitap_tanim_grid growl :liste_form:kitap_listesi"
                          actionListener="#{kitapView.onKaydet}"/>
-
-
-
 
     </h:form>
 

@@ -58,11 +58,13 @@ public class KitapView {
             FacesContext.getCurrentInstance()
                     .addMessage(null, new FacesMessage("Kayıt islemi Basarili..", null));
 
+
         } else {
             FacesContext.getCurrentInstance()
                     .addMessage(null, new FacesMessage("Kayıt islemi basarisiz..Zorunlu alanları kontrol ediniz.", null));
         }
     }
+
 
     public void onGetir() {
         if (kitap.getAdi() == null) {
@@ -71,6 +73,7 @@ public class KitapView {
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Liste getirilmiştir.", null));
         }
     }
+
 
 
 

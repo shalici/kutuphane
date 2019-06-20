@@ -48,6 +48,12 @@ public class KullaniciKayitView {
         }
     }
 
+    public void giris() {
+        if (kullaniciKayit.getKullanici_adi() != null && kullaniciKayit.getKullanici_adi()!=kullaniciKayit.getKullanici_adi()) {
+            kullaniciService.giris(kullaniciKayit);
+        }else FacesContext.getCurrentInstance().addMessage(null,new FacesMessage("Kullanıcı Adı hatalı",null));
+    }
+
     public KullaniciKayit getKullaniciKayit() {
         return kullaniciKayit;
     }

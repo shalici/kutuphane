@@ -1,23 +1,21 @@
 package entity;
 
+import org.hibernate.annotations.Tables;
+
 import javax.persistence.*;
 import java.util.Date;
 
 @Inheritance(strategy = InheritanceType.JOINED)
 @Entity
-@Table(name = "kullanici")
+@Table(name = "Kullanici")
 public class KullaniciKayit extends BaseEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private Long id;
+
     @Column(name = "kullanici")
     private String kullanici_adi;
     @Column(name = "sifre")
     private String password;
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "kimlik_id")
+    @Column
     private String kimlik;
 
     private String password_again;
@@ -114,4 +112,3 @@ public class KullaniciKayit extends BaseEntity {
         this.kimlik = kimlik;
     }
 }
-

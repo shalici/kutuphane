@@ -12,6 +12,7 @@ public class KullaniciKayitService implements IKullaniciKayitService {
     private Long idGenerator=1L;
     private static KullaniciKayitService instance;
     private KullaniciDAO kullaniciDAO = new KullaniciDAO();
+    private KullaniciKayit kullaniciKayit = new KullaniciKayit();
 
     public KullaniciKayitService(){
 
@@ -25,8 +26,14 @@ public class KullaniciKayitService implements IKullaniciKayitService {
     }
 
     public void kaydet(KullaniciKayit kullaniciKayit){
-        if(kullaniciKayit !=null){
+        if(kullaniciKayit !=null && kullaniciKayit.getKullanici_adi().equals(kullaniciKayit.getKullanici_adi())){
             kullaniciDAO.kaydet(kullaniciKayit);
+        }
+    }
+
+    public void giris(KullaniciKayit kullaniciKayit){
+        if (kullaniciKayit.getKullanici_adi().equals(kullaniciKayit.getKullanici_adi())){
+            kullaniciDAO.giris(kullaniciKayit);
         }
     }
 
