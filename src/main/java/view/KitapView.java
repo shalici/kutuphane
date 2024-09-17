@@ -4,6 +4,7 @@ import entity.Kategori;
 import entity.Kitap;
 import org.primefaces.event.SelectEvent;
 import services.KitapService;
+import sun.misc.Cleaner;
 
 import javax.annotation.PostConstruct;
 import javax.faces.application.FacesMessage;
@@ -50,17 +51,30 @@ public class KitapView {
     }
 
     public void onKaydet() {
-            if (kitap.getAdi() != null) {
-                kitapService.kaydet(kitap);
+        if (kitap.getAdi() != null) {
+            kitapService.kaydet(kitap);
 
-                kitapList = kitapService.kitapListesiGetir();
-                FacesContext.getCurrentInstance()
-                        .addMessage(null, new FacesMessage("Kayıt islemi Basarili..", null));
-            } else {
-                FacesContext.getCurrentInstance()
-                        .addMessage(null, new FacesMessage("Kayıt islemi basarisiz..Zorunlu alanları kontrol ediniz.", null));
-            }
+            kitapList = kitapService.kitapListesiGetir();
+            FacesContext.getCurrentInstance()
+                    .addMessage(null, new FacesMessage("Kayıt islemi Basarili..", null));
+
+
+        } else {
+            FacesContext.getCurrentInstance()
+                    .addMessage(null, new FacesMessage("Kayıt islemi basarisiz..Zorunlu alanları kontrol ediniz.", null));
         }
+    }
+
+
+    public void onGetir() {
+        if (kitap.getAdi() == null) {
+            kitapService.kitapListesiGetir();
+            kitapService.onGetir((Kitap) kitapList);
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Liste getirilmiştir.", null));
+        }
+    }
+
+
 
 
     public Kitap getKitap() {

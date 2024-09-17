@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:p="http://java.sun.com/jsf/html"
+      xmlns:h="http://xmlns.jcp.org/jsf/html" xml:lang="en" lang="en">
+<head>
+    <title>Register</title>
+</head>
+<body>
+
+<center>
+
+    <h:form id="kullanii_kayit_form">
+        <p:panelGrid id="kullanici_kayit_form_grid" columns="3">
+
+            <p:outputText value="Kullanıcı Adınızı Giriniz:"/>
+            <p:inputText id="kullaniciAdi_input" value="#{kullaniciKayitView.kullaniciKayit.kullanici_adi}"
+                         required="true" requiredMessage="Bu alan zorunludur."/>
+            <p:message for="kullaniciAdi_input" display="text.warning"/>
+
+
+            <p:outputText value="Şifrenizi Giriniz:"/>
+            <p:inputText id="password_input" value="#{kullaniciKayitView.kullaniciKayit.password}"
+                           required="true" requiredMessage="Bu alan zorunludur."/>
+            <p:message for="password_input" display="text.warning"/>
+
+            <p:outputText value="Tekrar Şifre Giriniz."/>
+            <p:inputText id="password_again_input" value="#{kullaniciKayitView.kullaniciKayit.password}"
+                           required="true" requiredMessage="Bu alan zorunludur."/>
+            <p:message for="password_again_input" display="text.warning"/>
+
+            <p:outputText value="Ad Soyad"/>
+            <p:inputText id="ad_soyad_input" value="#{kullaniciKayitView.kimlik.adiSoyadi}"
+                         required="true" requiredMessage="Bu alan zorunludur."/>
+            <p:message for="ad_soyad_input" display="text.warning"/>
+
+            <p:outputText value="Tc Kimlik Numarası"/>
+            <p:inputText id="tc_input" value="#{kullaniciKayitView.kimlik.tcKimlikNo}"
+                         required="true" requiredMessage="Bu alan zorunludur" maxlength="11" minlength="11"/>
+            <p:message for="tc_input" display="text.warning"/>
+
+            <p:outputText value="Adres"/>
+            <p:inputTextarea id="adres_input" value="#{kullaniciKayitView.kimlik.adres}"
+                             required="true" requiredMessage="Bu alan zorunludur." maxlength="100" minlength="10"/>
+            <p:message for="adres_input" display="text.warning"/>
+
+
+        </p:panelGrid>
+
+        <p:commandButton value="Kayıt Ol"
+                         update="personel_tanimla_grid growl :liste_form:personel_listesi"
+                         actionListener="#{kullaniciKayitView.kaydet}"
+                         action="index"/>
+        <p:commandButton value="Giriş Yap"
+                         actionListener="#{kullaniciKayitView.giris}"
+                         action="index"/>
+
+
+
+    </h:form>
+</center>
+
+</body>
+</html>

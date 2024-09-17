@@ -47,8 +47,20 @@ public class KitapService implements IKitapService {
         }
     }
 
+    public void onGetir(Kitap kitap){
+        if (kitapList!=null){
+            kitapDAO.findAll();
+        }else {
+
+            System.out.println("Liste boş");
+        }
+    }
+
+
+
     @Override
     public List<Kitap> kitapListesiGetir() {
         return kitapDAO.findAll();
     }
 }
+
